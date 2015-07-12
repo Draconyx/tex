@@ -1,0 +1,71 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% % Invoice Template
+% LaTeX Template
+% Version 1.0 (3/11/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Trey Hunner (http://www.treyhunner.com/)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Important note:
+% This template requires the invoice.cls file to be in the same directory as
+% the .tex file. The invoice.cls file provides the style used for structuring the
+% document.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT CONFIGURATION
+%----------------------------------------------------------------------------------------
+
+\documentclass{invoice} % Use the custom invoice class (invoice.cls)
+
+\usepackage{graphicx}
+\graphicspath{{../images/}}
+
+\def \tab {\hspace*{3ex}} % Define \tab to create some horizontal white space
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	HEADING SECTION
+%----------------------------------------------------------------------------------------
+
+%\includegraphics[]{draconyx-splash}
+\hfil{\includegraphics[scale=0.3]{draconyx-splash.jpg}}\hfil
+%  \Huge\bf Draconyx, LLC.}
+%\hfil{\Huge\bf Draconyx, LLC.}\hfil % Company providing the invoice
+%\bigskip\break % Whitespace
+\hrule % Horizontal line
+
+5681 Calle Las Colinas \hfill (555) 555-5555 \\ % Your address and contact information
+Evansville, IN 47712  \hfill jklem@draconyx.net
+\\ \\
+{\bf Invoice To:} \\
+\tab Customer Name\\ % Invoice recipient
+\tab Company LLC. \\ % Recipient's company
+{\bf Date:} \\
+\tab \today \\ % Invoice date
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF EXPENSES
+%----------------------------------------------------------------------------------------
+
+\begin{invoiceTable}
+
+\feetype{Consulting Services} % Fee category description
+\hourrow{Jan 1, 2015: Configuration}{3}{100}
+\hourrow{Jan 1, 2015: Development}{10}{100}
+
+\feetype{Expenses} % Fee category description
+\feerow{Equipment}{100.00}
+
+\end{invoiceTable}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}

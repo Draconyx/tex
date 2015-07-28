@@ -7,4 +7,4 @@ file="$1"
 dir=$(dirname $file)
 company=$(grep company cust-skyline-20150727/invoice.tex | sed -e 's/\\tab//' -e 's/\\.*//')
 [[ $api ]] || { echo "Token not set..exiting" && exit 1; }
-curl -F file=@${file} -F channels=#invoices -F filetype=pdf -F filename="$file" -F title="$company $date" -F token=${api} https://slack.com/api/files.upload
+curl -F file=@${file} -F channels=C087M96BF -F filetype=pdf -F filename="$file" -F title="$company $date" -F token=${api} https://slack.com/api/files.upload

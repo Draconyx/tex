@@ -36,6 +36,11 @@ ask "Enter hourly rate (e.g. 100): "
 read -e -r RATE
 [[  $RATE ]] || { echo "Invalid response, exiting.." && exit 1; }
 
+ask "Enter invoice number (e.g. 1): "
+read -e -r INUM
+[[  $INUM ]] || { echo "Invalid response, exiting.." && exit 1; }
+
+
 
 ask "Continue? [Y/N]: "
 read -e -r TRY
@@ -49,6 +54,7 @@ sed -i.bu "s/CompanyName/$COMPANY/" invoice.tex
 sed -i.bu "s/CustomerName/$NAME/" invoice.tex
 sed -i.bu "s/CustomerName/$RATE/" invoice.tex
 sed -i.bu "s/HourlyRate/$RATE/" invoice.tex
+sed -i.bu "s/InvoiceNum/$INUM/" invoice.tex
 
 rm -f *.bu
 vim invoice.tex
